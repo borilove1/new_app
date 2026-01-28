@@ -17,6 +17,7 @@ npx prisma migrate dev
 npx prisma db seed
 npm run start:dev
 ```
+> `.env`에 `PORT`, `DATABASE_URL`, `REDIS_URL` 등을 설정할 수 있습니다. Flutter Web에서 호출할 수 있도록 개발 CORS가 열려 있습니다.
 
 3) Frontend 실행
 ```bash
@@ -24,6 +25,7 @@ cd apps/frontend
 flutter pub get
 flutter run -d chrome
 ```
+> 기본 API 주소는 `http://localhost:3000`이며, 필요 시 `--dart-define=API_BASE_URL=http://<server-ip>:3000`로 변경할 수 있습니다.
 
 ## 목표
 - **Flutter 기반 프론트엔드**로 모바일(iOS/Android)과 웹을 동시에 지원합니다.
