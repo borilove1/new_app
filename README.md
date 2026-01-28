@@ -1,5 +1,30 @@
 # 일정관리 프로그램 개요 (Flutter + 백엔드)
 
+## 로컬 실행 방법 (MVP)
+
+1) 인프라 실행
+```bash
+docker-compose up -d
+```
+
+2) Backend 실행
+```bash
+cd apps/backend
+cp ../../.env.example .env
+npm install
+npx prisma generate
+npx prisma migrate dev
+npx prisma db seed
+npm run start:dev
+```
+
+3) Frontend 실행
+```bash
+cd apps/frontend
+flutter pub get
+flutter run -d chrome
+```
+
 ## 목표
 - **Flutter 기반 프론트엔드**로 모바일(iOS/Android)과 웹을 동시에 지원합니다.
 - **사내 시스템 연동 없이** 자체 ID/PW 인증 및 조직(부서/직급) 관리가 가능한 구조를 전제로 합니다.
